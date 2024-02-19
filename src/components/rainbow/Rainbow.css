@@ -1,0 +1,37 @@
+div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+span {
+    display: block;
+    flex-grow: 1;
+}
+
+#rainbow-red {
+    background-color: red;
+}
+
+#rainbow-orange {
+    background-color: orange;
+}
+
+#rainbow-yellow {
+    background-color: yellow;
+}
+
+#rainbow-green {
+    background-color: green;
+}
+
+#rainbow-blue {
+    background-color: blue;
+}
+
+#rainbow-indigo {
+    background-color: indigo;
+}
+
+#rainbow-violet {
+    background-color: violet;
+}
