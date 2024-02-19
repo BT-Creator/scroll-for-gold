@@ -3,10 +3,12 @@ import '@mantine/core/styles.css';
 import { MantineProvider, Flex, Container } from '@mantine/core';
 import NormalRainbow from './components/rainbow/NormalRainbow'
 import HeroHeading from './components/HeroHeading/HeroHeading';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <MantineProvider>
+      <Header/>
       <Container fluid>
         <Flex
         gap="md"

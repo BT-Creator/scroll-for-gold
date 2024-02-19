@@ -14,7 +14,7 @@ export default function HeroHeading({title, text}:HeroHeadingProps){
           align="center"
           direction="column"
           wrap="nowrap"
-          mt='lg'>
+          my='lg'>
           <Title order={1}>{title}</Title>
           <Text size='md'>{text}</Text>
         </Flex>
