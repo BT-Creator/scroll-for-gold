@@ -1,16 +1,25 @@
 import './App.css'
 import '@mantine/core/styles.css';
-import { MantineProvider } from '@mantine/core';
-import Rainbow from './components/rainbow/Rainbow'
+import { MantineProvider, Flex, Container } from '@mantine/core';
+import NormalRainbow from './components/rainbow/NormalRainbow'
+import HeroHeading from './components/HeroHeading/HeroHeading';
 
 function App() {
   return (
     <MantineProvider>
-      <section>
-        <h1>Scroll for Gold</h1>
-        <p>At the end of the page, there's a pot of gold, just for you! Just scroll down and try to get it ^^</p>
-      </section>
-      <Rainbow/>
+      <Container fluid>
+        <Flex
+        gap="md"
+        justify="center"
+        align="center"
+        direction="column"
+        wrap="nowrap">
+        <HeroHeading 
+          title='Scroll for Gold'
+          text="At the end of the page, there's a pot of gold, just for you! Just scroll down and try to get it ^^"/>
+        <NormalRainbow/>
+      </Flex>
+      </Container>
     </MantineProvider>
   )
 }
