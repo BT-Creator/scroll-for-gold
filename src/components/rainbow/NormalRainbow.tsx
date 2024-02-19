@@ -3,7 +3,7 @@ import './NormalRainbow.css';
 
 export default function NormalRainbow(){
     return (
-        <Group mx='md' justify="center" grow gap="0">
+        <Group mt='md' justify="center" grow gap="0">
             <Container bg='red' h='2000'/>
             <Container bg='orange' h='2000'/>
             <Container bg='yellow' h='2000'/>
