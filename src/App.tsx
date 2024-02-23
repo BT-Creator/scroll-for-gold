@@ -1,6 +1,6 @@
 import './App.css'
 import '@mantine/core/styles.css';
-import { MantineProvider, Flex, Container, Affix } from '@mantine/core';
+import { MantineProvider, Flex, Container, Affix, Button } from '@mantine/core';
 import Rainbow from './components/Rainbow/Rainbow'
 import HeroHeading from './components/HeroHeading/HeroHeading';
 import Header from './components/Header/Header';
@@ -17,7 +17,7 @@ import MotivationalPrompt from './components/MotivationalPrompt/MotivationalProm
 
 function App() {
   const [intersect, setIntesect] = useState(true)
-  
+
 
   function onChange(intersecting: boolean) {
     setIntesect(intersecting);
@@ -44,14 +44,19 @@ function App() {
               title='Scroll for Gold'
               text="At the end of the page, there's a pot of gold, just for you! Just scroll down and try to get it ^^" />
           </ReactVisibilitySensor>
-          {!intersect && 
-            <Affix position={{top: 10, right: 10}}>
-                <TimerNotification autoStart/>
+          {!intersect &&
+            <Affix position={{ top: 10, left: 10 }}>
+              <MotivationalPrompt />
             </Affix>}
-          {!intersect && 
-            <Affix position={{top: 10, left: 10}}>
-                <MotivationalPrompt />
+          {!intersect &&
+            <Affix position={{ bottom: 10, left: 10 }}>
+              <TimerNotification autoStart />
             </Affix>}
+          {!intersect &&
+            <Affix position={{bottom: 10, right: 10}}>
+              <Button>I give up 😞</Button>
+            </Affix>
+          }
           <Rainbow />
         </Flex>
       </Container>
