@@ -5,21 +5,23 @@ import Rainbow from './components/Rainbow/Rainbow'
 import HeroHeading from './components/HeroHeading/HeroHeading';
 import Header from './components/Header/Header';
 import ReactVisibilitySensor from 'react-visibility-sensor';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Timer from './components/Timer/Timer';
-import { BiStopwatch } from 'react-icons/bi';
 import { IoStopwatch, IoThumbsUp } from 'react-icons/io5';
+import { PiHandsClapping, PiSword } from 'react-icons/pi';
+import { AiOutlineThunderbolt } from 'react-icons/ai';
+import TimerNotification from './components/TimerNotifcation/TimerNotification';
+import MotivationalPrompt from './components/MotivationalPrompt/MotivationalPrompt';
 
 /**
- * TODO: Make notification & timer align properly for mobile screens
- * TODO: Implement notification fuctionality
- * TODO: Add timer that activates when HeroHeading is not intersecting
+ * TODO: Move Notifications to different component as interface
  * TODO: Add periodic notification that motivates users with fake info
  * TODO: Add quit button that changes text multiple times
  */
 
 function App() {
   const [intersect, setIntesect] = useState(true)
+  
 
   function onChange(intersecting: boolean) {
     setIntesect(intersecting);
@@ -48,15 +50,11 @@ function App() {
           </ReactVisibilitySensor>
           {!intersect && 
             <Affix position={{top: 10, right: 10}}>
-                <Notification  title="Timer" withCloseButton={false} icon={<IoStopwatch/>}>
-                  <Timer autoStart />
-                </Notification>
+                <TimerNotification autoStart/>
             </Affix>}
           {!intersect && 
             <Affix position={{top: 10, left: 10}}>
-                <Notification title="Good luck!" withCloseButton={false} icon={<IoThumbsUp/>}>
-                  Just keep scrolling and you'll get there!
-                </Notification>
+                <MotivationalPrompt />
             </Affix>}
           <Rainbow />
         </Flex>

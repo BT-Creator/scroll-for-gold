@@ -1,9 +1,6 @@
 import { Text } from "@mantine/core";
 import { useEffect, useState } from "react";
 
-/**
- * TODO: Implement timer functionality
- */
 interface TimerProps {
     autoStart: boolean
 }
@@ -15,7 +12,7 @@ export default function Timer({autoStart}:TimerProps){
     useEffect(() => {
         let interval;
         (active)
-            ? interval = setInterval(() => setTime((time) => time + 10), 10)
+            ? interval = setInterval(() => setTime((time) => time + 10), 20)
             : clearInterval(interval)
     }, [active])
 
