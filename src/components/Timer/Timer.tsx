@@ -6,7 +6,8 @@ interface TimerProps {
 }
 
 export default function Timer({autoStart}:TimerProps){
-    const [active, setActive] = useState(autoStart)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [active, _setActive] = useState(autoStart)
     const [time, setTime] = useState(0)
 
     useEffect(() => {

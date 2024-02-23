@@ -1,15 +1,11 @@
 import './App.css'
 import '@mantine/core/styles.css';
-import { MantineProvider, Flex, Container, Affix, Notification } from '@mantine/core';
+import { MantineProvider, Flex, Container, Affix } from '@mantine/core';
 import Rainbow from './components/Rainbow/Rainbow'
 import HeroHeading from './components/HeroHeading/HeroHeading';
 import Header from './components/Header/Header';
 import ReactVisibilitySensor from 'react-visibility-sensor';
-import { useEffect, useRef, useState } from 'react';
-import Timer from './components/Timer/Timer';
-import { IoStopwatch, IoThumbsUp } from 'react-icons/io5';
-import { PiHandsClapping, PiSword } from 'react-icons/pi';
-import { AiOutlineThunderbolt } from 'react-icons/ai';
+import { useState } from 'react';
 import TimerNotification from './components/TimerNotifcation/TimerNotification';
 import MotivationalPrompt from './components/MotivationalPrompt/MotivationalPrompt';
 
