@@ -7,6 +7,8 @@ import Header from './components/Header/Header';
 import ReactVisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import Timer from './components/Timer/Timer';
+import { BiStopwatch } from 'react-icons/bi';
+import { IoStopwatch, IoThumbsUp } from 'react-icons/io5';
 
 /**
  * TODO: Make notification & timer align properly for mobile screens
@@ -44,8 +46,18 @@ function App() {
               title='Scroll for Gold'
               text="At the end of the page, there's a pot of gold, just for you! Just scroll down and try to get it ^^" />
           </ReactVisibilitySensor>
-          {!intersect && <Affix position={{top: 10, right: 10}}><Timer/></Affix>}
-          {!intersect && <Affix position={{top: 10, left: 10}}><Notification title="Good luck!" withCloseButton={false}>Just keep scrolling and you'll get there!</Notification></Affix>}
+          {!intersect && 
+            <Affix position={{top: 10, right: 10}}>
+                <Notification  title="Timer" withCloseButton={false} icon={<IoStopwatch/>}>
+                  <Timer autoStart />
+                </Notification>
+            </Affix>}
+          {!intersect && 
+            <Affix position={{top: 10, left: 10}}>
+                <Notification title="Good luck!" withCloseButton={false} icon={<IoThumbsUp/>}>
+                  Just keep scrolling and you'll get there!
+                </Notification>
+            </Affix>}
           <Rainbow />
         </Flex>
       </Container>

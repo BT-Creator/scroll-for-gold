@@ -6,7 +6,7 @@ export default function Rainbow(){
 
     return (
         <Group justify="center" grow gap="0">
-            {colors.map(color => <Container bg={color} h='2000'/>)}
+            {colors.map(color => <Container bg={color} h='2000' key={color}/>)}
         </Group>
     )
 }
