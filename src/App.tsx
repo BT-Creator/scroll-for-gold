@@ -9,9 +9,7 @@ import { useState } from 'react';
 import TimerNotification from './components/TimerNotifcation/TimerNotification';
 import MotivationalPrompt from './components/MotivationalPrompt/MotivationalPrompt';
 
-/**
- * TODO: Move Notifications to different component as interface
- * TODO: Add periodic notification that motivates users with fake info
+/** 
  * TODO: Add quit button that changes text multiple times
  */
 
