@@ -1,11 +1,7 @@
 import { Flex, Title, Text, Container, Button } from "@mantine/core";
-import { useContext } from "react";
-import GameState from "../contexts/GameStateContext";
 
-export default function GameOverScreen(){
-    const gameState = useContext(GameState)
-
-    return(
+export default function GameOverScreen() {
+    return (
         <Container h='100vh' bg="black">
             <Flex
                 justify="center"
@@ -18,7 +14,7 @@ export default function GameOverScreen(){
                 <Title order={1} c="white">Congrats!</Title>
                 <Text c="white">You wasted so much time of your life!</Text>
                 <Text c="white">Wanna try again?</Text>
-                <Button onClick={() => gameState.switchGameState()}>Try again</Button>
+                <Button onClick={() => window.location.reload()}>Try again</Button>
             </Flex>
         </Container>
     )
