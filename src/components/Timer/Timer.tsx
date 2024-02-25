@@ -13,7 +13,7 @@ export default function Timer({autoStart}:TimerProps){
     useEffect(() => {
         let interval;
         (active)
-            ? interval = setInterval(() => setTime((time) => time + 10), 20)
+            ? interval = setInterval(() => setTime((time) => time + 10), 10)
             : clearInterval(interval)
     }, [active])
 
