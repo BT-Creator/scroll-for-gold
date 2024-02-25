@@ -48,7 +48,7 @@ function App() {
             </Affix>}
           {!intersect &&
             <Affix position={{ bottom: 10, left: 10 }}>
-              <TimerNotification autoStart />
+              <TimerNotification autoStart/>
             </Affix>}
           {!intersect &&
             <Affix position={{bottom: 10, right: 10}}>
