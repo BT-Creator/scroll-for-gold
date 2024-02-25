@@ -34,13 +34,13 @@ export default function MotivationalPrompt() {
             "id": 4,
             "title": "Power Scroll!",
             "description": "For the next 10 seconds, you can scroll twice as fast!",
-            "icon": <IoSparkles/>
+            "icon": <IoSparkles />
         },
         {
             "id": 5,
             "title": "SUPER scroll!",
             "description": "For the next 10 seconds, your scroll speed TRIPLES!",
-            "icon": <IoFlame/>
+            "icon": <IoFlame />
         },
         {
             "id": 6,
@@ -49,17 +49,20 @@ export default function MotivationalPrompt() {
             "icon": <IoArrowUp />
         }
     ])
+    const intervalChangeId = useRef(0)
 
-    const intervalId = useRef(0)
+    const constructPromptInterval = () => {
+        if (intervalChangeId.current === 0) {
+            intervalChangeId.current = setInterval(() => setPrompt(
+                (prompt.id === 0)
+                    ? prompts.current[Math.floor(Math.random() * (prompts.current.length))]
+                    : prompts.current.filter((candidate) => candidate.id !== prompt.id)[Math.floor(Math.random() * (prompts.current.length))]),
+                10000)
+        }
+    }
 
     useEffect(() => {
-        if(intervalId.current === 0){
-            intervalId.current = setInterval(() => setPrompt(
-            (prompt.id === 0) 
-                ? prompts.current[Math.floor(Math.random() * (prompts.current.length))]
-                : prompts.current.filter((candidate) => candidate.id !== prompt.id)[Math.floor(Math.random() * (prompts.current.length))]), 
-        10000)
-        }
+        constructPromptInterval()
     })
 
     return (

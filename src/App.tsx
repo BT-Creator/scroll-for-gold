@@ -5,7 +5,7 @@ import Rainbow from './components/Rainbow/Rainbow'
 import HeroHeading from './components/HeroHeading/HeroHeading';
 import Header from './components/Header/Header';
 import ReactVisibilitySensor from 'react-visibility-sensor';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import TimerNotification from './components/TimerNotifcation/TimerNotification';
 import MotivationalPrompt from './components/MotivationalPrompt/MotivationalPrompt';
 
@@ -15,7 +15,13 @@ import MotivationalPrompt from './components/MotivationalPrompt/MotivationalProm
 
 function App() {
   const [intersect, setIntesect] = useState(true)
-
+  const [quitText, setQuitText] = useState("I give up 😞")
+  const quitStrings = useRef([
+    "Are you sure?",
+    "Like, really?",
+    "But, Gold!",
+    "Last chance...",
+  ])
 
   function onChange(intersecting: boolean) {
     setIntesect(intersecting);
@@ -24,6 +30,14 @@ function App() {
       window.addEventListener('onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel', e => e.preventDefault(), { passive: false })
       window.addEventListener("touchmove", e => e.preventDefault(), { passive: false })
       window.addEventListener("keydown", e => console.log(e.key), false)
+    }
+  }
+
+  function onClick(){
+    if(quitStrings.current.length > 0){
+      const nextText = quitStrings.current[0]
+      setQuitText(nextText)
+      quitStrings.current = quitStrings.current.filter(text => text !== nextText)
     }
   }
 
@@ -52,7 +66,7 @@ function App() {
             </Affix>}
           {!intersect &&
             <Affix position={{bottom: 10, right: 10}}>
-              <Button>I give up 😞</Button>
+              <Button onClick={onClick}>{quitText}</Button>
             </Affix>
           }
           <Rainbow />
