@@ -4,6 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import GameScreen from './pages/GameScreen';
 import GameState from './contexts/GameStateContext';
 import { useState } from 'react';
+import GameOverScreen from './pages/GameOverScreen';
 
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
     <MantineProvider>
       <GameState.Provider value={game}>
         {game.state
-          ? <p>You lost</p>
-          : <GameScreen /> }
+          ? <GameOverScreen/>
+          : <GameScreen/> }
       </GameState.Provider>
     </MantineProvider>
   )

@@ -9,7 +9,6 @@ import TimerNotification from "../components/TimerNotifcation/TimerNotification"
 import GameState from "../contexts/GameStateContext";
 
 export default function GameScreen() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const gameState = useContext(GameState)
     const [intersect, setIntesect] = useState(true)
     const [quitText, setQuitText] = useState("I give up 😞")
