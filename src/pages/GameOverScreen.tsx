@@ -2,7 +2,7 @@ import { Flex, Title, Text, Container, Button } from "@mantine/core";
 
 export default function GameOverScreen() {
     return (
-        <Container h='100vh' bg="black">
+        <Container h='100vh' bg="black" fluid>
             <Flex
                 justify="center"
                 align="center"
